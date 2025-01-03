@@ -8,7 +8,7 @@ from PyQt5.QtGui import *
 
 ParsedGamesNews = []
 
-urlGame = "https://stopgame.ru/news"
+urlGame = "https://stopgame.ru/news" 
 
 headersGame = {
     "accept": "*/*",
@@ -20,7 +20,7 @@ pageGame = req.get(urlGame, headers=headersGame)
 
 soupGame = BeautifulSoup(pageGame.text, "html.parser")
 
-name1 = soupGame.find_all("div", {"class": "caption caption-bold"})
+name1 = soupGame.find_all("div", {"class": "caption caption-bold"}) # не работает!!!!!!!!!!!!!!
 for item in name1:
     ParsedGamesNews.append(item.text.replace('\n', '').replace('\nB', ''))
 
